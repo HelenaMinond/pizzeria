@@ -12,7 +12,7 @@
       <div class="col-12">
         <div class="row">
           <!-- Card -->
-          <div class="col-4" v-for="val in pizzas" :key="val.name">
+          <div class="col-4" v-for="val in productosFiltrados" :key="val.name">
             <div class="card">
               <!-- Imagen -->
               <img :src="val.img" class="card-img-top" alt="Imagen Pizza">
@@ -31,11 +31,8 @@
                 <p>Precio: ${{ val.price }}</p>
                 <!-- Boton -->
                 <div class="row">
-                  <div class="col-6">
-                    <input class="w-100 h-100" type="text">
-                  </div>
-                  <div class="col-6">
-                    <a href="#" class="btn btn-primary">Agregar</a>
+                  <div class="col-12">
+                    <button class="btn btn-primary" @click="agregarPizza(val.id)">Agregar</button>
                   </div>
                 </div>
               </div>
@@ -52,15 +49,21 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapGetters, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      carrito: [],
+    }
+  },
   computed: {
-    ...mapState(["pizzas"])
+    ...mapGetters(["productosFiltrados"]),
   },
   methods: {
-    ...mapActions(["obtenerData"])
+    ...mapActions(["obtenerData"]),
+    ...mapMutations(["agregarPizza"]),
   },
   created () {
     this.obtenerData();

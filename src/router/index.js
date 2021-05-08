@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Inventario from "../views/Inventario.vue";
+import Carrito from "../views/Carrito.vue";
 import Ventas from "../views/Ventas.vue";
 import Vista404 from "../views/Vista404.vue";
 
@@ -17,6 +18,11 @@ const routes = [
     path: "/inventario",
     name: "Inventario",
     component: Inventario,
+  },
+  {
+    path: "/carrito",
+    name: "Carrito",
+    component: Carrito,
   },
   {
     path: "/ventas",

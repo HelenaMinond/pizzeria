@@ -15,25 +15,35 @@
               <router-link to="/inventario" class="nav-link">Inventario</router-link>
             </li>
             <li class="nav-item">
+              <router-link to="/carrito" class="nav-link">Carrito</router-link>
+            </li>
+            <li class="nav-item">
               <router-link to="/ventas" class="nav-link">Ventas</router-link>
             </li>
           </ul>
         </div>
+        <p>{{ cantidadCarrito }}</p>
+        <div @click="$router.push('/carrito')"><i class="fas fa-shopping-cart"></i></div>
       </div>
     </nav>
   </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Navbar",
+  computed: {
+    ...mapGetters(["cantidadCarrito"]),
+  },
 };
 </script>
 
 <style scoped>
-nav {
+/* nav {
   position: fixed;
   width: 100%;
   z-index: 1;
-}
+} */
 </style>
