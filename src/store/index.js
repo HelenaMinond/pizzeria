@@ -24,9 +24,12 @@ export default new Vuex.Store({
       state.productos = payload;
     },
 
-    agregarPizza(state, id) {
-      const agregar = id;
+    agregarPizza(state, payload) {
+      const agregar = payload.id;
       const cantidad = 1;
+      const nombre = payload.nombre;
+      const precio = payload.precio;
+      const subtotal = precio * cantidad;
 
       const finder = state.carrito.find((obj) => obj.id === agregar);
 
@@ -34,9 +37,15 @@ export default new Vuex.Store({
         const obj = {
           id: agregar,
           cantidad: cantidad,
+          nombre: nombre,
+          precio: precio,
+          subtotal: subtotal,
         };
         state.carrito.push(obj);
-      } else finder.cantidad = cantidad + finder.cantidad;
+      } else {
+        finder.cantidad = cantidad + finder.cantidad;
+        finder.subtotal = finder.cantidad * precio;
+      }
     },
 
   },

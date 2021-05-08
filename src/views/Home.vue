@@ -32,7 +32,7 @@
                 <!-- Boton -->
                 <div class="row">
                   <div class="col-12">
-                    <button class="btn btn-primary" @click="agregarPizza(val.id)">Agregar</button>
+                    <button class="btn btn-primary" @click="agregarPizza({id: val.id, nombre: val.name, precio: val.price})">Agregar</button>
                   </div>
                 </div>
               </div>
