@@ -49,24 +49,15 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations, mapActions } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
   name: "Home",
-  data() {
-    return {
-      carrito: [],
-    }
-  },
   computed: {
     ...mapGetters(["productosFiltrados"]),
   },
   methods: {
-    ...mapActions(["obtenerData"]),
     ...mapMutations(["agregarPizza"]),
-  },
-  created () {
-    this.obtenerData();
   },
 }
 </script>
