@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <router-link to="/" class="nav-link">Home</router-link>
+              <router-link to="/" class="nav-link">Inicio</router-link>
             </li>
             <li class="nav-item">
               <router-link to="/inventario" class="nav-link">Inventario</router-link>
@@ -30,4 +30,10 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+</style>
