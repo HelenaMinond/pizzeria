@@ -3,7 +3,7 @@
     <div class="row">
       <!-- Titulo -->
       <div class="col-12 mt-5 mb-2 pt-4">
-        <h1 class="text-center">Frontendnini a la G5</h1>
+        <h1 class="titular">Frontendnini a la G5</h1>
       </div>
       <!-- Final Titulo -->
       <!-- Cards -->
@@ -19,7 +19,7 @@
                 <!-- Nombre -->
                 <h5 class="card-title text-capitalize fw-bold">{{ val.name }}</h5>
                 <!-- Descripción -->
-                <p id="descripcionCard" class="descripcionCard card-text">{{ val.desc }}</p>
+                <p class="descripcionCard card-text">{{ val.desc }}</p>
                 <!-- Ingredientes -->
                 <p class="fw-bold">Ingredientes:</p>
                 <ul>
@@ -60,7 +60,10 @@ export default {
 </script>
 
 <style>
-.descripcionCard{
+.descripcionCard {
   text-align: justify;
+}
+.titular {
+  text-align: center;
 }
 </style>

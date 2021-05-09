@@ -1,30 +1,17 @@
 import { shallowMount } from "@vue/test-utils";
-//import HelloWorld from "@/components/HelloWorld.vue";
 import Home from "@/views/Home.vue";
 
-
 describe("Home.vue", () => {
-  // it("renders props.msg when passed", () => {
-  //   const msg = "new message";
-  //   const wrapper = shallowMount(HelloWorld, {
-  //     propsData: { msg },
-  //   });
-  //   expect(wrapper.text()).toMatch(msg);
-  // });
-
-  test("Presencia de clase descripcionCard", () => {
+  test("Presencia de texto en etiqueta h1", () => {
     const wrapper = shallowMount(Home);
-    const clase = wrapper.find("#descripcionCard");
-    //console.log(clase);
-    expect(clase.exists()).toBe(false);
+    const h1 = wrapper.find("h1");
+    expect(h1.text()).toContain("Frontendnini");
   })
 
-  test("Presencia de titulo", () => {
+  test("Presencia de clase titular", () => {
     const wrapper = shallowMount(Home);
-    const clase = wrapper.find("#descripcionCard");
-    //console.log(clase);
-    expect(clase.exists()).toBe(false);
+    const titular = wrapper.find(".titular");
+    expect(titular.exists()).toBe(true);
   })
-
 });
 
