@@ -30,6 +30,13 @@ export default new Vuex.Store({
     cargarData(state, payload) {
       state.productos = payload;
     },
+
+    // productosFiltrados(state) {
+    //   //Productos con stock mayor a cero.
+    //   const productos = state.productos.filter(pizza => pizza.stock > 0);
+    //   return !productos ? [] : productos;
+    // },
+
     agregarPizza(state, payload) {
       //Variables
       const agregar = payload.id;

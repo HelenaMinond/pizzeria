@@ -19,7 +19,7 @@
                 <!-- Nombre -->
                 <h5 class="card-title text-capitalize fw-bold">{{ val.name }}</h5>
                 <!-- Descripción -->
-                <p class="descripcionCard card-text">{{ val.desc }}</p>
+                <p id="descripcionCard" class="descripcionCard card-text">{{ val.desc }}</p>
                 <!-- Ingredientes -->
                 <p class="fw-bold">Ingredientes:</p>
                 <ul>

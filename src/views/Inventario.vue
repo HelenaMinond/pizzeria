@@ -30,7 +30,7 @@
           <!-- Contenido tabla cuando SI hay inventario -->
           <tbody v-else>
             <!-- Contenido tabla -->
-            <tr v-for="(val, i) in productos" :key="i">
+            <tr v-for="(val, i) in productos" :key="i" :style="val.stock === 0 ? 'backgroundColor:red' : ''">
               <th scope="row">{{ i + 1 }}</th>
               <td>{{ val.id }}</td>
               <td class="text-capitalize">{{ val.name }}</td>
