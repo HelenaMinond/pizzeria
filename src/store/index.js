@@ -15,11 +15,10 @@ export default new Vuex.Store({
       return state.carrito.length;
     },
     productosFiltrados(state) {
-      //Obtener solamente los productos con stock mayor a cero
+      //Productos con stock mayor a cero.
       const productos = state.productos.filter(pizza => pizza.stock > 0);
       return !productos ? [] : productos;
     },
-    //REVISAR - NO FUNCIONA
     totalCarrito(state) {
       const carrito = state.carrito;
       if (carrito.length === 0) return 0;
@@ -32,14 +31,14 @@ export default new Vuex.Store({
       state.productos = payload;
     },
     agregarPizza(state, payload) {
+      //Variables
       const agregar = payload.id;
       const cantidad = 1;
       const nombre = payload.nombre;
       const precio = payload.precio;
       const subtotal = precio * cantidad;
-
+      //Función
       const finder = state.carrito.find((obj) => obj.id === agregar);
-
       if (!finder) {
         const obj = {
           id: agregar,
@@ -57,7 +56,7 @@ export default new Vuex.Store({
     comprar(state) {
       const respuesta = confirm("Selecciona 'Aceptar' para comprar.");
       if(respuesta) {
-        //console.log(respuesta)
+        //Iteración de carrito
         const venta = state.carrito.map(obj => {
           const obj2 = {
             id: obj.id,
@@ -68,10 +67,9 @@ export default new Vuex.Store({
           return obj2;
         })
         state.ventas = venta;
-
+        //Iteración de productos
         state.productos.forEach(producto => {
           const id = producto.id;
-
           state.carrito.forEach(pizza => {
             if(pizza.id === id) {
               producto.stock = producto.stock - pizza.cantidad;
@@ -87,18 +85,14 @@ export default new Vuex.Store({
       try {
         const request = await axios(url);
         const pizzas = request.data;
-
         const pizzasStock = pizzas.map((obj) => {
           obj.stock = 10;
           return obj;
         })
-
         commit("cargarData", pizzasStock)
-        //console.log(request);
       } catch (error) {
         console.log(error);
       }
     },
   },
-  modules: {},
 });

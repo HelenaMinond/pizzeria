@@ -1,8 +1,8 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">FG5</a>
+        <router-link to="/" class="navbar-brand">FG5</router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,8 +22,8 @@
             </li>
           </ul>
         </div>
-        <p>{{ cantidadCarrito }}</p>
-        <div @click="$router.push('/carrito')"><i class="fas fa-shopping-cart"></i></div>
+        <p>Tipo de Pizzas: {{ cantidadCarrito }} </p>
+        <div @click="$router.push('/carrito')"><i class="fas fa-shopping-cart ms-2"></i></div>
       </div>
     </nav>
   </div>
@@ -41,9 +41,9 @@ export default {
 </script>
 
 <style scoped>
-/* nav {
+nav {
   position: fixed;
   width: 100%;
   z-index: 1;
-} */
+}
 </style>

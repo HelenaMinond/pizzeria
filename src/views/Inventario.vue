@@ -1,14 +1,12 @@
 <template>
   <div class="container">
-
     <!-- Titulo -->
     <div class="row">
       <div class="col-12">
-        <h1>Inventario de Productos</h1>
+        <h1 class="mt-5 mb-4 pt-4 text-center">Inventario de Productos</h1>
       </div>
     </div>
     <!-- Final titulo -->
-
     <!-- Tabla -->
     <div class="row">
       <div class="col-12">
@@ -26,7 +24,7 @@
           <!-- Contenido tabla cuando NO hay inventario -->
           <tbody v-if="productos && productos.length === 0">
             <tr>
-              <td colspan="5">Sin productos en el inventario</td>
+              <td class="text-center" colspan="5">Sin productos en el inventario</td>
             </tr>
           </tbody>
           <!-- Contenido tabla cuando SI hay inventario -->
@@ -35,8 +33,8 @@
             <tr v-for="(val, i) in productos" :key="i">
               <th scope="row">{{ i + 1 }}</th>
               <td>{{ val.id }}</td>
-              <td>{{ val.name }}</td>
-              <td>{{ val.price }}</td>
+              <td class="text-capitalize">{{ val.name }}</td>
+              <td>${{ val.price }}</td>
               <td>{{ val.stock }}</td>
             </tr>
           </tbody>
@@ -44,7 +42,6 @@
       </div>
     </div>
     <!-- Final tabla -->
-    
   </div>
 </template>
 
@@ -58,7 +55,3 @@ export default {
   },
 }
 </script>
-
-<style>
-
-</style>

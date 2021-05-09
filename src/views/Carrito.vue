@@ -1,14 +1,12 @@
 <template>
   <div class="container">
-
     <!-- Titulo -->
     <div class="row">
       <div class="col-12">
-        <h1>Carrito de Compras</h1>
+        <h1 class="mt-5 mb-4 pt-4 text-center">Carrito de Compras</h1>
       </div>
     </div>
     <!-- Final titulo -->
-
     <!-- Tabla -->
     <div class="row">
       <div class="col-12">
@@ -26,7 +24,7 @@
           <!-- Contenido tabla cuando NO hay productos agregados a carrito -->
           <tbody v-if="carrito && carrito.length === 0">
             <tr>
-              <td colspan="5">Sin productos en el carrito</td>
+              <td class="text-center" colspan="5">Sin productos en el carrito</td>
             </tr>
           </tbody>
           <!-- Contenido tabla cuando SI hay productos agregados a carrito -->
@@ -34,10 +32,10 @@
             <!-- Contenido tabla -->
             <tr v-for="(val, i) in carrito" :key="i">
               <th scope="row">{{ i + 1 }}</th>
-              <td>{{ val.nombre }}</td>
-              <td>{{ val.precio }}</td>
+              <td class="text-capitalize">{{ val.nombre }}</td>
+              <td>${{ val.precio }}</td>
               <td>{{ val.cantidad }}</td>
-              <td>{{ val.subtotal }}</td>
+              <td>${{ val.subtotal }}</td>
             </tr>
             <!-- Total precio de productos agregados a carrito -->
             <tr>
@@ -47,7 +45,7 @@
             <!-- Botón comprar -->
             <tr>
               <td colspan="5">
-                <button class="btn btn-primary" @click="comprar">Comprar</button>
+                <button class="btn btn-success" @click="comprar">Comprar</button>
               </td>
             </tr>
           </tbody>
@@ -55,7 +53,6 @@
       </div>
     </div>
     <!-- Final tabla -->
-    
   </div>
 </template>
 
@@ -73,7 +70,3 @@ export default {
   },
 }
 </script>
-
-<style>
-
-</style>
