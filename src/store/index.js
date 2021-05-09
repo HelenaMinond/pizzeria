@@ -66,7 +66,7 @@ export default new Vuex.Store({
           }
           return obj2;
         })
-        state.ventas = venta;
+        state.ventas = state.ventas.concat(venta); //Mostrar todas las ventas realizadas al clickear botón comprar
         //Iteración de productos
         state.productos.forEach(producto => {
           const id = producto.id;

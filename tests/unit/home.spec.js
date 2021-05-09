@@ -6,7 +6,7 @@ describe("Home.vue", () => {
     const wrapper = shallowMount(Home);
     const h1 = wrapper.find("h1");
     expect(h1.text()).toContain("Frontendnini");
-  })
+    })
 
   test("Presencia de clase titular", () => {
     const wrapper = shallowMount(Home);
@@ -14,4 +14,3 @@ describe("Home.vue", () => {
     expect(titular.exists()).toBe(true);
   })
 });
-
