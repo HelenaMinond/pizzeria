@@ -19,6 +19,7 @@
               <th scope="col">Nombre</th>
               <th scope="col">Precio</th>
               <th scope="col">Stock</th>
+              <th scope="col">Acciones</th>
             </tr>
           </thead>
           <!-- Contenido tabla cuando NO hay inventario -->
@@ -36,6 +37,7 @@
               <td class="text-capitalize">{{ val.name }}</td>
               <td>${{ val.price }}</td>
               <td>{{ val.stock }}</td>
+              <td><button @click="borrarPizza(val.id)" class="btn btn-warning">Borrar Registro</button></td>
             </tr>
           </tbody>
         </table>
@@ -46,12 +48,18 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Inventario",
   computed: {
     ...mapState(["productos"]),
+  },
+  methods: {
+    ...mapActions(["borrarPizzas"]),
+    borrarPizza(id) {
+      this.borrarPizzas(id);
+    }
   },
 }
 </script>

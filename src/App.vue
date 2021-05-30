@@ -15,10 +15,11 @@ export default {
     Navbar,
   },
   methods: {
-    ...mapActions(["obtenerData"]),
+    ...mapActions(["obtenerData" /*, "setDataPizzasDB"*/]),
   },
   created () {
     this.obtenerData();
+    // this.setDataPizzasDB();
   },
 };
 </script>

@@ -47,6 +47,7 @@
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+// import { db } from "../../firebase";
 
 export default {
   name: "Home",
@@ -55,6 +56,13 @@ export default {
   },
   methods: {
     ...mapMutations(["agregarPizza"]),
+    // async getData() {
+    //   const req = await db.collection("piz").get();
+    //   for (const val of req.docs) {
+    //     console.log(val.data());
+    //   }
+    //   console.log(req.docs)
+    // }
   },
 }
 </script>
